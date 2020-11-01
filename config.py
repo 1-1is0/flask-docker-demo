@@ -8,10 +8,10 @@ class Config(object):
 	SECRET_KEY = 'this-really-needs-to-be-changed'
 
 
-class ProductionConfig(Config):
+class ProdCon(Config):
 	DEBUG = False
 
 
-class DevelopmentConfig(Config):
+class DevConf(Config):
 	DEVELOPMENT = True
 	DEBUG = True
