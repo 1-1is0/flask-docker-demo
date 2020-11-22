@@ -1,0 +1,3 @@
+FROM ubuntu
+ARG name=nemo
+RUN echo ${name}

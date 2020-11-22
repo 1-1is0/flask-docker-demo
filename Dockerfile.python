@@ -1,0 +1,7 @@
+ARG version=3.9
+FROM python:${version}
+# RUN pip install flask
+# RUN python --version
+COPY . .
+# CMD [ "python", "--version"]
+CMD ["python", "app.py"]
