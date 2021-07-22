@@ -1,4 +1,4 @@
-# userful commands for working with this project
+# useful commands for working with this project
 
 
 building the dockerfile
