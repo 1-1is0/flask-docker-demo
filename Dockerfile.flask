@@ -1,20 +1,17 @@
 FROM python:3.8
-ARG PY_VERSION=3.8
 
 WORKDIR /app
 
-RUN apt-get install git && \
-	pip install --no-cache-dir -U pip
-
 COPY requirements.txt .
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 COPY . .
-
-# ARG OR ENV
-ENV APP_SETTINGS=config.DevConf
+ARG PYMONGO_VERSION
+RUN pip install pymongo==$PYMONGO_VERSION
 
 EXPOSE 5000
 
-CMD ["python", "app.py"]
+ENV APP_SETTINGS=config.DevConf
+
+CMD ["python", 	"app.py"]
